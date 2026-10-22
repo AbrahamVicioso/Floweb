@@ -1,0 +1,23 @@
+.botanical-scene{position:relative;isolation:isolate;overflow:hidden;min-height:650px;display:flex;align-items:center;background:#11170f;color:var(--cream)}
+.botanical-scene__visual{position:absolute;display:block;inset:-48px -22px;z-index:-2;transform:translate3d(var(--scene-x,0px),var(--scene-y,0px),0) scale(var(--scene-scale,1.035));pointer-events:none}
+.botanical-scene__visual img{width:100%;height:100%;object-fit:cover;object-position:center}
+.botanical-scene__shade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#11170f70 0%,#11170f20 47%,transparent 68%)}
+.botanical-scene__copy{padding:80px 8% 120px;max-width:700px}
+.botanical-scene__copy h2{font-size:clamp(48px,5.2vw,74px);line-height:1.08;font-weight:400;letter-spacing:-.035em}
+.botanical-scene__copy em{font-family:'Instrument Serif',serif;color:var(--lime);font-weight:400;font-size:1.17em;margin-inline-start:.08em}
+.botanical-scene__copy p{font-size:15px;line-height:1.85;margin-top:28px;color:#d7dfce}
+.botanical-scene__copy .text-link{margin-top:30px;min-height:44px;border-color:#9baa87;color:var(--cream)}
+.botanical-scene__caption{position:absolute;bottom:30px;left:8%;right:8%;color:#d7dfce;font-size:11px;line-height:1.6}
+@media(min-width:1600px){.botanical-scene{min-height:720px}.botanical-scene__copy{padding-left:max(8vw,calc((100vw - 1450px)/2));max-width:850px}}
+@media(max-width:760px){
+ .botanical-scene{min-height:790px;align-items:flex-start}
+ .botanical-scene__visual{inset:-28px -12px}
+ .botanical-scene__visual img{object-position:center}
+ .botanical-scene__shade{background:linear-gradient(180deg,#11170f25,transparent 55%,#11170f40)}
+ .botanical-scene__copy{padding:48px 7% 0;max-width:100%}
+ .botanical-scene__copy h2{font-size:clamp(44px,12vw,55px)}
+ .botanical-scene__copy p{font-size:14px;margin-top:24px;line-height:1.8}
+ .botanical-scene__copy .text-link{margin-top:20px;font-size:13px}
+ .botanical-scene__caption{left:7%;right:7%;bottom:24px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.botanical-scene__visual{transform:none}}

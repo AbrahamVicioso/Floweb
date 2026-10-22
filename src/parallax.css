@@ -1,0 +1,33 @@
+/* One botanical silhouette crosses the boundary between dark and light. */
+main{overflow-x:clip}
+.hero-scene{position:relative;z-index:2;isolation:isolate;overflow:visible}
+.hero-scene .hero{z-index:auto;min-height:690px;height:calc(100svh - 123px);max-height:900px}
+.hero-scene .hero-image{opacity:.26;filter:saturate(.65);width:100%;right:0;object-position:center;}
+.hero-scene .hero-shade{background:linear-gradient(90deg,#11170f 0%,#11170fb3 40%,#11170f10 80%),linear-gradient(0deg,#11170f,transparent 35%)}
+.hero-scene .hero:after{content:'';position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(0deg,var(--cream),transparent);pointer-events:none}
+.hero-scene .hero-content{z-index:4;width:57%;padding-top:85px}
+.hero-scene .hero-content h1{font-size:clamp(55px,6vw,86px)}
+.hero-floral-layer{position:absolute;z-index:2;top:0;right:-3%;width:64%;height:calc(100% + 155px);pointer-events:none;transform:translate3d(0,var(--floral-y,0px),0) rotate(var(--floral-turn,0deg));transform-origin:65% 45%}
+.hero-floral-cutout{height:100%;width:100%;object-fit:contain;object-position:center;filter:drop-shadow(-15px 20px 23px #060b0638)}
+.hero-scene .hero-caption{z-index:3;left:8%;right:auto;bottom:140px;text-align:left}
+.hero-scene .scroll-cue{left:auto;right:4%;bottom:140px;z-index:3}
+.hero-scene .hero-side{z-index:3}
+.collection{position:relative;padding-top:165px}
+.collection .section-heading{position:relative;z-index:3}
+.collection .heading-aside{padding-top:45px}
+@media(min-width:1600px){.hero-floral-layer{right:1%;width:60%}}
+@media(max-width:1100px) and (min-width:761px){.hero-floral-layer{width:68%;right:-9%}.hero-scene .hero-content{width:61%;padding-top:75px}.hero-scene .hero-content h1{font-size:64px}.collection{padding-top:160px}}
+@media(max-width:760px){
+ .hero-scene .hero{height:820px;min-height:0;max-height:none}
+ .hero-scene .hero-content{width:100%;padding:38px 7% 0}
+ .hero-scene .hero-content h1{font-size:clamp(48px,12.6vw,65px)}
+ .hero-scene .hero-image{top:28%;height:85%;width:100%;right:0;opacity:.19}
+ .hero-scene .hero-shade{background:linear-gradient(180deg,#11170f 15%,#11170f70 60%,#11170f)}
+ .hero-floral-layer{top:342px;right:-13%;width:105%;height:615px;transform-origin:60% 40%}
+ .hero-floral-cutout{object-position:center top;filter:drop-shadow(-8px 12px 15px #060b0628)}
+ .hero-scene .hero-caption{display:none}
+ .hero-scene .scroll-cue{right:auto;left:7%;bottom:140px}
+ .collection{padding-top:220px}
+ .collection .heading-aside{padding-top:0}
+}
+@media(prefers-reduced-motion:reduce){.hero-floral-layer{transform:none}.hero-scene .hero-content{transform:none}}
