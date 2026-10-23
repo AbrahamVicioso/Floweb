@@ -1,0 +1,19 @@
+/* Every garden layer belongs to products and is clipped at its top edge. */
+.collection{isolation:isolate;overflow:clip;padding-top:190px;background:linear-gradient(180deg,#11170f 0%,#20261d 10%,#3c4236 24%,#656b5d 40%,#969b8c 58%,#c3c7b9 76%,#e2e4d9 90%,var(--cream) 100%) top / 100% 160px no-repeat}
+.floral-passage{position:absolute;z-index:0;inset:0 0 auto;height:160px;overflow:hidden;pointer-events:none;contain:paint}
+.floral-passage__viewport{position:relative;width:100%;height:100%;overflow:hidden}
+.floral-passage__hedge{position:absolute;left:-5%;bottom:22px;width:110%;height:clamp(260px,34svh,340px);max-width:none;object-fit:contain;opacity:var(--garden-opacity,0);transform:translate3d(0,var(--garden-drop,-240px),0)}
+.floral-passage__corner{position:absolute;z-index:1;bottom:6px;width:clamp(190px,24vw,350px);height:300px;pointer-events:none;opacity:var(--corner-opacity,0)}
+.floral-passage__corner img{width:100%;height:100%;object-fit:contain}
+.floral-passage__corner--left{left:-90px;transform:translate3d(calc(-1 * var(--corner-x,110%)),var(--corner-y,28px),0) rotate(32deg)}
+.floral-passage__corner--right{right:-90px;transform:translate3d(var(--corner-x,110%),var(--corner-y,28px),0) rotate(-32deg)}
+.floral-passage__corner--right img{transform:scaleX(-1)}
+@media(max-width:760px){
+ .collection{padding-top:150px;background-size:100% 120px}
+ .floral-passage{height:120px}
+ .floral-passage__hedge{width:160%;left:-30%;height:clamp(180px,25svh,220px);bottom:16px}
+ .floral-passage__corner{width:145px;height:190px;bottom:0}
+ .floral-passage__corner--left{left:-72px}
+ .floral-passage__corner--right{right:-72px}
+}
+

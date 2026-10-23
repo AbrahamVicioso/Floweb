@@ -2,10 +2,9 @@ import {useEffect} from 'react';
 
 export default function usePageMotion(){
  useEffect(()=>{
-  const media=matchMedia('(prefers-reduced-motion: reduce)');
   const animations=new Set();
   const animate=(el,frames,options)=>{
-   if(!el||media.matches)return;
+   if(!el)return;
    const animation=el.animate(frames,{duration:650,easing:'cubic-bezier(.16,1,.3,1)',...options});
    animations.add(animation);animation.finished.then(()=>animations.delete(animation)).catch(()=>{});
   };
@@ -23,9 +22,8 @@ export default function usePageMotion(){
    observer.unobserve(el);
   }),{threshold:.15});
   document.querySelectorAll('.story-photo,.story-copy,.newsletter form').forEach(el=>observer.observe(el));
-  const cancel=()=>{if(media.matches)animations.forEach(a=>a.cancel())};
   const escape=e=>{if(e.key==='Escape')document.querySelector('.mobile-menu[aria-expanded="true"]')?.click()};
-  media.addEventListener('change',cancel);document.addEventListener('keydown',escape);
-  return()=>{observer.disconnect();animations.forEach(a=>a.cancel());window.removeEventListener('floria:entered',enter);media.removeEventListener('change',cancel);document.removeEventListener('keydown',escape)};
+  document.addEventListener('keydown',escape);
+  return()=>{observer.disconnect();animations.forEach(a=>a.cancel());window.removeEventListener('floria:entered',enter);document.removeEventListener('keydown',escape)};
  },[]);
 }

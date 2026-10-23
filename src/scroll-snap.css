@@ -1,0 +1,21 @@
+/* Native proximity snapping keeps long sections and touch scrolling free. */
+html {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 0;
+}
+
+/* Keep the opening and expanded navigation stable while they own the screen. */
+html:has(.site-opening),
+html:has(.mobile-nav),
+html[data-floral-advancing] {
+  scroll-snap-type: none;
+}
+
+.announcement,
+main > section,
+footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+

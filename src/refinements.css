@@ -12,7 +12,7 @@
 .hero-scene .hero-content h1{font-size:clamp(56px,5.8vw,82px);line-height:1.06}
 .hero-scene .hero-image{opacity:.14}
 .hero-floral-layer{right:-2%;width:61%;height:calc(100% + 100px)}
-.hero-scene .hero:after{height:80px}
+.hero-scene .hero:after{content:none}
 .hero-scene .hero-caption,.hero-scene .scroll-cue{bottom:100px}
 .hero-footnote{font-size:11px}
 .hero-content>p{font-size:15px;line-height:1.75}
@@ -163,10 +163,7 @@
  .product-dialog>img{height:260px}.product-dialog>div{padding:26px;gap:18px}
  .checkout-form input,.checkout-form textarea{font-size:16px;min-height:46px}
 }
-@media(prefers-reduced-motion:reduce){
- .hero-floral-layer,.hero-scene .hero-content{transform:none}
- .overlay,.product-dialog,.toast,.mobile-nav,.statement-line{animation:none}
-}
+
 /* Portrait framing preserves the full wrapping and satin bows. */
 .product-image{aspect-ratio:1054/1492}
 .product-image img{object-position:center;object-fit:contain}
@@ -176,3 +173,9 @@
 .story-photo img{object-position:center 40%}
 .occasion img{object-position:center 38%}
 @media(max-width:760px){.hero-floral-layer{top:365px}}
+
+/* Conceal the wrapping base before the garden crosses the hero edge. */
+.hero-floral-cutout{mask-image:linear-gradient(to bottom,#000 0%,#000 58%,transparent 76%)}
+
+/* The product garden owns the transition; no separate white gap. */
+.hero-scene::after{content:none}

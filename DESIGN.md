@@ -1,4 +1,4 @@
-# Floria visual system
+# Alhelí visual system
 ## Dirección fotográfica actual
 Las referencias `ramo.png` y `ramo2.png` establecen una colección variada: ramos pastel, girasoles en papel negro con dorado, rosas rojas en kraft, flores silvestres, tulipanes y lirios blancos. Cada producto tiene una fotografía diferente; la coherencia procede de la iluminación natural suave y el cuidado del encuadre, sin repetir las mismas flores. Ocho productos visibles desde el inicio. La portada conserva el ramo pastel transparente y la interfaz mantiene los tonos oliva y marfil. Encuadres completos con object-fit contain en catálogo para preservar envolturas y lazos. Archivos y prompts en ASSETS-PASTEL.md y ASSETS-VARIETY.md.
 
@@ -13,5 +13,48 @@ No usar modelos 3D ni Three.js. La fotografía original recortada conserva el pr
 ## Native botanical scene
 The rejected video and every runtime video reference have been removed. The editorial interlude now uses one original photograph per viewport, with distinct desktop and mobile compositions: flowers at the right on desktop, flowers below the text on mobile. No duplicated bouquet, no enlarged duplicate background, no film or autoplay. High-quality WebP photography is the focal material. Bounded native scroll framing and gentle pointer response use requestAnimationFrame only while visible and settling. Reduced motion renders the photograph still. Captions stay on dark negative space. Assets and prompts: ASSETS-EDITORIAL.md.
 
+## Ajuste magnético entre secciones
+Scroll nativo con `scroll-snap-type: y proximity`: colección, estudio, escena botánica, ocasiones, newsletter y pie se alinean al inicio al detenerse cerca. El catálogo largo conserva desplazamiento libre en su interior. Sin interceptar rueda, gestos ni teclado; con movimiento reducido se desactiva el ajuste.
+
 ## Opening sequence
-A first-visit session opening introduces three actual catalog bouquets: sunflower, pastel signature and tulips. Warm ivory surface, centered Floria wordmark, a portrait triptych with slight two-dimensional angles, and a short brand line. Each photograph reveals with a small stagger, followed by a rising curtain transition. Total duration about 1.55 seconds, absolute safety timeout 1.8 seconds. Explicit skip, Escape, Tab, wheel and touch dismiss it. Deep links, restored scroll positions and reduced-motion preferences bypass it. Session storage prevents replay on routine reload. Image failure dismisses the opening. Hero entrance starts at the handoff rather than behind the overlay. No new video, rotating flower, 3D object, fake progress bar or indefinite loading state.
+The original three photographic cards remain: sunflower, pastel signature and tulips, with the warm ivory surface and centered Floria wordmark. Each photo reveals with a short stagger, followed by a curtain exit (about 1.55 seconds, safety timeout 1.8 seconds). The introduction now replays on every document visit and reload, including deep links and restored scroll positions; no session storage gate. Reduced motion shows static cards for 900 ms. Skip, Escape, Tab, wheel and touch dismiss the standard sequence. Image failure reveals the page. The assembled-bouquet experiment was removed at the user's request.
+
+## Flowering garden entrance
+The three opening cards remain centered. Two mirrored photographic garden shrubs enter from the lower left and right with 1.15/1.2 second deceleration and a small stagger. Blush roses, cream and lilac hydrangeas and olive foliage match the existing palette; no wrapping, ribbon, pot or tied bouquet. Desktop uses tall side framing; mobile moves the shrubs into the lower corners to preserve the cards, brand and skip control. Decorative images share a single transparent PNG request and fail independently without blocking entry. No continuous animation or new dependency. Curtain handoff starts at 1.65 seconds; exit completes at 2.15 seconds, absolute safety 2.5 seconds. Reduced motion keeps the shrubs still during the existing 900 ms introduction.
+
+## Distant flowering hedge
+A third photographic layer sits behind the two foreground shrubs: a low, wide flowering hedge inspired only by the horizontal silhouette of the user-supplied foliage reference. Original blush/ivory/lilac flowers match the existing shrub palette. The hedge enters upward over 1.45 seconds with 18% final opacity, mild desaturation, a static 1 px softening and a vertical fade into ivory. Foreground shrubs and central cards keep their original scale and timing. Mobile uses a wider low horizon behind the lower corners. Reduced motion renders the hedge still; image failure only hides this decorative layer.
+
+## Hero-to-catalog floral passage
+The horizontal hedge is a short native divider: 62 svh desktop and 46 svh mobile. At the user's request the full-screen sticky zoom was removed. Scale is capped at 1.12; the hedge moves upward with cubic acceleration as the catalog enters. Desktop uses 110% image width and mobile 160%, avoiding the previous oversized crop. A lower ivory fade softens the handoff. The user requires a 560 ms accelerated handoff in both directions: downward wheel, keyboard or completed touch scrolling crosses into the catalog; upward scrolling crosses back to the hero. Reversing the wheel or navigation keys during a handoff switches destination instead of leaving the hedge centered. Native snapping pauses during travel. New touch gestures, resize, hidden document, Escape and focus navigation cancel travel safely. Scripted anchors do not trigger handoffs. Reduced motion skips automatic travel. Animation frames run only while visible and settling. Product anchors skip directly to the catalog. Reduced motion renders a compact static divider; failed images collapse the passage. Existing imagery is reused without a new dependency or larger asset.
+
+## Floral docking at the catalog
+After the fast bidirectional handoff, the same hedge settles downward over one second with natural deceleration into a reserved floral header above the catalog. Desktop scale is 0.5 and mobile 0.65; the image keeps its aspect ratio and real alpha silhouette. Collection padding reserves the visible floral height plus clear separation from the title and controls. Upward navigation releases the hedge back to the hero boundary with the same soft transition. Only transforms animate, no clone or extra image request. Settling timers clean up on unmount, resize updates the target, reduced motion keeps the compact static divider. Hero ivory fade height is reduced from 80 to 45 px so its start sits lower.
+
+## Compact hero garden refinement
+The crossing hedge uses a compact 34 svh desktop / 25 svh mobile frame, with the photograph contained at its natural aspect ratio. It occupies less of the hero and docks as a small floral edge above the collection. Catalog header clearance is 124 px desktop and 100 px mobile. Broad ivory overlays were removed; the bouquet wrapping base fades out within its own image before the crossing.
+
+## Constant-scale floral seam and corner entrances
+The central hedge now keeps scale 1 throughout the hero-to-catalog passage, including the docked navigation state; previous shrinking/docking transforms are superseded. Only a bounded 42 px vertical parallax remains. Two side arrangements reuse the existing transparent shrub photograph, with matching blush roses, ivory/lilac hydrangeas and olive foliage. Mirrored diagonal silhouettes frame the seam from the viewport edges. They enter once from left and right over 850 ms with a 100 ms stagger when the divider enters view. Mobile uses smaller edge crops, and reduced motion displays both arrangements statically. No new imagery request beyond the existing shrub asset, no animation dependency, and no added catalog padding.
+
+## Soft catalog arrival
+The central hedge sits 36 px lower on desktop and 24 px lower on mobile, freeing more hero space. On catalog arrival it settles at full scale with an interruptible 950 ms transform transition and a short opacity/14 px reveal, leaving an 80 px desktop / 56 px mobile floral edge above the heading. Existing catalog padding stays unchanged; reduced motion disables the arrival animation.
+
+## Scroll-linked product corners
+The previous one-time corner entrance is superseded: side shrubs stay transparent and outside the edges while the hero is visible. After the hero exits, their horizontal entrance, opacity and bounded vertical parallax track the remaining distance to the catalog, with native frame interpolation. Returning to the hero reverses the same movement. Side arrangements now sit lower at the catalog seam and do not change its padding. Reduced motion updates their visibility directly without interpolation. Central hedge size and soft catalog arrival are preserved.
+
+## Garden contained within products (current behavior)
+All three shrubs are now children of the collection in an absolute, paint-contained, overflow-hidden strip. They cannot paint above the collection boundary or over the hero. The central hedge keeps its approved scale and descends from 240 px above its final position as the collection enters view; matching side shrubs enter from the edges with bounded vertical parallax. Scroll progress is interpolated and reversible. The old standalone crossing passage, docking states and automatic bidirectional scroll handoff are removed. Product heading clearance is 190 px desktop and 150 px mobile; decoration is clipped within 160 / 120 px. Reduced motion shows the static composition within the same clipping boundary.
+
+## Gradient after the hero
+A normal-flow pseudo-element extends the hero scene by 104 px desktop / 80 px mobile, fading olive into the collection ivory. The hero section itself keeps its existing dimensions. The gradient starts strictly at the hero bottom, occupies its own space, and ends before the clipped product garden; it overlays neither flowers nor hero content.
+
+## Unified garden transition
+The separate gradient extension is superseded. The gradient now paints the collection background directly behind its clipped floral strip (160 px desktop, 120 px mobile), so foliage descends over the olive-to-ivory transition instead of emerging from a separate white area. The hero dimensions stay unchanged; no gradient overlays the photographs and no white gap separates the transition from the garden.
+
+## Brand name
+The storefront is now Alhelí, displayed as alhelí. in the existing wordmark style. The name is applied to the opening, navigation accessibility labels, studio signature, footer, metadata and WhatsApp greeting. Floria remains only as the original visual reference and in internal persistence/event identifiers to preserve existing carts and behavior.
+
+
+## Preferencia de movimiento (actual)
+Por solicitud del usuario, la app ignora la preferencia de movimiento reducido del dispositivo. Introducci?n, parallax, jard?n, transiciones, marquesina, desplazamiento suave y ajuste entre secciones permanecen activos. Esta decisi?n sustituye las menciones anteriores de movimiento reducido.

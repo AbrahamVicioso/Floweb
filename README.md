@@ -1,4 +1,4 @@
-# Floria
+# Alhelí
 
 Tienda floral de demostración construida con React, Vite y Lucide. Inspirada en https://floria-landing-page.vercel.app/ y desarrollada usando impeccable.
 
